@@ -1,48 +1,276 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title></title>
-</head>
-<body>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="style.css">
+		<script src="scripts.js"></script>
+	</head>
 
-<h1><b>Project Name:</b> Piano With Adaptive Tactile Feedback<br>
-</h1><h2><b>Team Members:</b> Michael Shumikhin, Harrison Allen
+	<body body id="the-top" data-spy="scroll" data-target=".navbar" data-offset="60">
+		<!--NAVBAR-->
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#top-navbar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#the-top">6.810</a>
+				</div>
+				<div class="collapse navbar-collapse" id="top-navbar">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#idea">idea</a></li>
+						<li><a href="#about">about</a></li>
+						<li><a href="#milestones">milestones</a></li>
+						<li><a href="#presentation">presentation</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
 
-<br><br>
+		<!--HEADER-->
+		<div class="jumbotron text-center bg-primary" id="header">
+			<h1>Piano With Adaptive Tactile Feedback</h1>
+			<p><b>Team Members:</b> Michael Shumikhin, Harrison Allen</p>
+		</div>
 
-</h2><h3>Our idea</h3>
-It can be challenging to learn how to play the piano.
-Our tactile piano gradually reduces support over time.
-The idea is to detect how well the player is playing and then adjust the frequency of tactile guidance accordingly.
+		<!--IDEA INTRODUCTION-->
+		<div class="container bg-gray" id="idea">
+			<div class="row">
+				<div class="col-sm-4 slideanim">
+					<img class="img-responsive" src="images/Picture1.png" alt="Rotoscope">
+				</div>
+				<div class="col-sm-8">
+					<h1>Our Idea</h1>
+					<h3>It can be challenging to learn how to play the piano.<br><br>
+						Our tactile piano gradually reduces support over time.<br><br>
+						The idea is to detect how well the player is playing and then adjust the frequency of tactile guidance accordingly.
+					</h3>
+				</div>
+			</div>
+		</div>
 
-<h3>How it works</h3>
-<ul>
-<li>16 keys -> Laser cut (Fast iteration)</li>
-<li>Key mechanism -> Dowel rod + spring (easy & effective)</li>
-<li>Detect key press -> Switch (Small & fast response)</li>
-<li>Tactile nubs -> Laser cut (Specific shape)</li>
-<li>Actuate tactile nubs -> Servos (Fine control)</li>
-<li>Control -> RaspberryPi3 w/ GPIO extension (Lots of docs, Python 😁, and more easily enables dynamic programs)</li>
-<li>Audio -> Speaker connected to RaspberryPi through AUX<li>
-Adaption -> Software controls tactile assistance based on user performance
-</ul>
+		<!--HOW IT WORKS-->
+		<div class="container text-center" id="about">
+			<h1>How it works</h1>
 
-<h3>Video</h3>
-Milestone #1 <br>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/eUJ91ZO6Ye0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<div class="panel-group" id="accordion">
+				<div class="panel panel-default">
+					<div class="panel-heading" data-toggle="collapse" data-target="#collapse1" data-parent="#accordion">
+						<h3 class="panel-title">16 Keys</h3>
+					</div>
+					<div id="collapse1" class="panel-collapse collapse">
+						<div class="panel-body">Laser cut for fast iteration</div>
+					</div>
+				</div>
 
-Milestone #2 <br>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/aX5lwO_ei5U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<div class="panel panel-default">
+					<div class="panel-heading" data-toggle="collapse" data-target="#collapse2" data-parent="#accordion">
+						<h3 class="panel-title">Key Mechanism</h3>
+					</div>
+					<div id="collapse2" class="panel-collapse collapse">
+						<div class="panel-body">Dowel rod and spring - easy and effective</div>
+					</div>
+				</div>
 
-Milestone #3 <br>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-7BtXQA5vbA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<div class="panel panel-default">
+					<div class="panel-heading" data-toggle="collapse" data-target="#collapse3" data-parent="#accordion">
+						<h3 class="panel-title">Detect Key Press</h3>
+					</div>
+					<div id="collapse3" class="panel-collapse collapse">
+						<div class="panel-body">Limit Switch - Small with fast response</div>
+					</div>
+				</div>
 
-Milestone #4 <br>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/kkqw8BsIWek" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<div class="panel panel-default">
+					<div class="panel-heading" data-toggle="collapse" data-target="#collapse4" data-parent="#accordion">
+						<h3 class="panel-title">Tactile Nubs</h3>
+					</div>
+					<div id="collapse4" class="panel-collapse collapse">
+						<div class="panel-body">Laser cut for specific shape</div>
+					</div>
+				</div>
 
+				<div class="panel panel-default">
+					<div class="panel-heading" data-toggle="collapse" data-target="#collapse5" data-parent="#accordion">
+						<h3 class="panel-title">Nub Actuation</h3>
+					</div>
+					<div id="collapse5" class="panel-collapse collapse">
+						<div class="panel-body">Servos for fine, inexpensive control</div>
+					</div>
+				</div>
 
-<h3>Photos</h3>
-<img src="Picture1.png">
-<img src="Picture2.png">
+				<div class="panel panel-default">
+					<div class="panel-heading" data-toggle="collapse" data-target="#collapse6" data-parent="#accordion">
+						<h3 class="panel-title">Control</h3>
+					</div>
+					<div id="collapse6" class="panel-collapse collapse">
+						<div class="panel-body">RaspberryPi3 w/ GPIO extension - Lots of docs, Python, and more easily enables dynamic programs</div>
+					</div>
+				</div>
 
-<h3>Presentation</h3>
-<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ_nSyUWyHf7KjCzXjvZwa8dpjyAyO67BCdeJOp92SBNohCPPb1tJ8ZQKr8lHgNxbFHLhRxNLEGL6oj/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-</body></html>
+				<div class="panel panel-default">
+					<div class="panel-heading" data-toggle="collapse" data-target="#collapse7" data-parent="#accordion">
+						<h3 class="panel-title">Audio</h3>
+					</div>
+					<div id="collapse7" class="panel-collapse collapse">
+						<div class="panel-body">Speaker connected to RaspberryPi through AUX</div>
+					</div>
+				</div>
+
+				<div class="panel panel-default">
+					<div class="panel-heading" data-toggle="collapse" data-target="#collapse8" data-parent="#accordion">
+						<h3 class="panel-title">Adaptation</h3>
+					</div>
+					<div id="collapse8" class="panel-collapse collapse">
+						<div class="panel-body">Software controls tactile assistance based on user performance</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--MILESTONES-->
+		<div class="container text-center bg-gray" id="milestones">
+			<h1>Milestones</h1>
+			<div class="row text-center">
+				<div class="col-sm-6 col-md-4 launch-modal slideanim" data-modal-id="milestone-1">
+					<div class="thumbnail">
+						<img src="images/Milestone 1.png" alt="Milestone 1">
+						<p><strong>Milestone 1</strong></p>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-4 launch-modal slideanim" data-modal-id="milestone-2">
+					<div class="thumbnail">
+						<img src="images/Milestone 2.png" alt="Milestone 2">
+						<p><strong>Milestone 2</strong></p>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-4 launch-modal slideanim" data-modal-id="milestone-3">
+					<div class="thumbnail">
+						<img src="images/Milestone 3.png" alt="Milestone 3">
+						<p><strong>Milestone 3</strong></p>
+					</div>
+				</div>
+				<div class="clearfix visible-md visible-lg"></div>
+				<div class="col-sm-6 col-md-4 launch-modal slideanim" data-modal-id="milestone-4">
+					<div class="thumbnail">
+						<img src="images/Milestone 4.png" alt="Milestone 4">
+						<p><strong>Milestone 4</strong></p>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-4 launch-modal slideanim" data-modal-id="milestone-5">
+					<div class="thumbnail">
+						<img src="images/Milestone 5.png" alt="Milestone 5">
+						<p><strong>Milestone 5</strong></p>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-4 launch-modal slideanim" data-modal-id="milestone-6">
+					<div class="thumbnail">
+						<img src="images/Milestone 6.png" alt="Milestone 6">
+						<p><strong>Milestone 6</strong></p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--VIDEO MODALS-->
+		<!--Milestone 1-->
+		<div class="modal fade" id="milestone-1" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-lg" role="document">
+		        <div class="modal-content">
+		            <div class="modal-header">
+		                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		                    <span aria-hidden="true">&times;</span>
+		                </button>
+		            </div>
+		            <div class="modal-body">
+		                <div class="modal-video">
+		                    <div class="embed-responsive embed-responsive-16by9">
+		                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/eUJ91ZO6Ye0" allowfullscreen></iframe>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+		<!--Milestone 2-->
+		<div class="modal fade" id="milestone-2" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-lg" role="document">
+		        <div class="modal-content">
+		            <div class="modal-header">
+		                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		                    <span aria-hidden="true">&times;</span>
+		                </button>
+		            </div>
+		            <div class="modal-body">
+		                <div class="modal-video">
+		                    <div class="embed-responsive embed-responsive-16by9">
+		                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/aX5lwO_ei5U" allowfullscreen></iframe>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+		<!--Milestone 3-->
+		<div class="modal fade" id="milestone-3" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-lg" role="document">
+		        <div class="modal-content">
+		            <div class="modal-header">
+		                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		                    <span aria-hidden="true">&times;</span>
+		                </button>
+		            </div>
+		            <div class="modal-body">
+		                <div class="modal-video">
+		                    <div class="embed-responsive embed-responsive-16by9">
+		                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/-7BtXQA5vbA" allowfullscreen></iframe>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+		<!--Milestone 4-->
+		<div class="modal fade" id="milestone-4" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-lg" role="document">
+		        <div class="modal-content">
+		            <div class="modal-header">
+		                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		                    <span aria-hidden="true">&times;</span>
+		                </button>
+		            </div>
+		            <div class="modal-body">
+		                <div class="modal-video">
+		                    <div class="embed-responsive embed-responsive-16by9">
+		                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/kkqw8BsIWek" allowfullscreen></iframe>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+
+		<!--PRESENTATION-->
+		<div class="container text-center" id="presentation">
+			<h1>Presentation</h1>
+			<div class="embed-responsive embed-responsive-16by9">
+				<iframe class="embed-responsive-item" src="https://docs.google.com/presentation/d/e/2PACX-1vQ_nSyUWyHf7KjCzXjvZwa8dpjyAyO67BCdeJOp92SBNohCPPb1tJ8ZQKr8lHgNxbFHLhRxNLEGL6oj/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+			</div>
+		</div>
+	</body>
+
+	<!--FOOTER-->
+	<footer class="container-fluid text-center">
+		<a href="#the-top" title="To the Top">
+			<span class="glyphicon glyphicon-chevron-up"></span>
+		</a>
+		<p>Developed for <a href="https://hcie.csail.mit.edu/classes/2018-fall-6810/6810-engineering-interactive-technologies.html">6.810</a> at <a href="web.mit.edu">MIT</a>.</p>
+	</footer>
+</html>
+
