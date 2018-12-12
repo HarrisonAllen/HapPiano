@@ -8,15 +8,27 @@
 }
 
 .bg-primary {
-	background-color: #42f4b9; /*Seafoam Blue*/
+	background-color: #42f4b9; /*Seafoam Green*/
 }
 
-.container {
-	padding: 60px 50px;
+.bg-primary.btn:hover {
+    background-color: #37cc9a;
+}
+
+.bg-primary.btn:active {
+    background-color: #37cc9a;
+}
+
+body > .container {
+	padding: 10px 50px;
 }
 
 .panel-heading {
 	cursor: pointer;
+}
+
+#about > img {
+    padding: 15px 0 15px 0;
 }
 
 .thumbnail {
